@@ -10,7 +10,7 @@ export default class DefaultController implements interfaces.Controller {
 
   @Get('/')
   public get( @invRequest() request: { user: any }, @InvResponse() res: Response) {
-    res.status(200).json({ bla: 'test' });
+    res.status(200).json(    { bla: 'test' }   )
   }
 
 }
