@@ -7,6 +7,12 @@
     "test": "gulp test",
     "semantic-release": "semantic-release"
   },
+  "release": {
+    "getLastRelease": "last-release-git",
+    "publish": [
+      "@semantic-release/github"
+    ]
+  },
   "author": "",
   "private": true,
   "license": "ISC",
