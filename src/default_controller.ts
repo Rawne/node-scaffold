@@ -1,15 +1,13 @@
-import { interfaces } from 'inversify-express-utils';
-import { Controller, Get, Post, Put, Delete, getDocs, RequestParam, Request as invRequest, Response as InvResponse } from 'inversify-express-doc';
+import { interfaces, controller, httpGet, httpPost, httpPut, httpDelete, requestParam, request as invRequest, response as invResponse } from 'inversify-express-utils';
 import { injectable, inject } from 'inversify';
 import { Response } from 'express';
 import 'reflect-metadata';
 
-@injectable()
-@Controller('/default')
+@controller('/default')
 export default class DefaultController implements interfaces.Controller {
 
-  @Get('/')
-  public get( @invRequest() request: { user: any }, @InvResponse() res: Response) {
+  @httpGet('/')
+  public get( @invRequest() request: { user: any }, @invResponse() res: Response) {
     res.status(200).json({ bla: 'test' });
   }
 
